@@ -8,7 +8,7 @@ before_script:
   - sleep 2 # give xvfb some time to start
 
 script:
-  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome -Dmode=headless
+  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome
 
 notifications:
     slack: tehnografija:yGLRFooashh7wutsGmMQFxou
