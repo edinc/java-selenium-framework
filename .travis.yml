@@ -2,13 +2,15 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  - MOZ_HEADLESS=1
+dist: trusty
 addons:
-  firefox: latest
+  chrome: stable
+before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 script:
-  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=firefox -Dmode=headless
+  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome -Dmode=headless
 
 notifications:
     slack: tehnografija:yGLRFooashh7wutsGmMQFxou
