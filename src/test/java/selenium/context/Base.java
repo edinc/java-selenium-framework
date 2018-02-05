@@ -8,6 +8,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
 import selenium.Application;
 import selenium.listeners.WebDriverListener;
+import selenium.testdata.file.FileLoaderService;
 
 @Listeners(WebDriverListener.class)
 @SpringApplicationConfiguration(Application.class)
