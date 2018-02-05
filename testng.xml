@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Java Selenium Framework" parallel="methods" verbose="1" thread-count="5">
+
+    <test name="all-tests">
+        <packages>
+            <package name="selenium.tests.*"/>
+        </packages>
+    </test>
+</suite>

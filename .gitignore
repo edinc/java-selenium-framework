@@ -1,0 +1,7 @@
+/.idea
+*.iml
+*.DS_Store
+velocity.log
+target
+test-output
+allure-results
