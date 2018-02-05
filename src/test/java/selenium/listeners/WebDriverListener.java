@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
+import selenium.context.Base;
 
 import java.io.File;
 import java.io.FileInputStream;
