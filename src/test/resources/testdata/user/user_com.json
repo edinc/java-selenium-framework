@@ -1,10 +1,11 @@
 {
   "gender": "MALE",
+  "username": "tomsmith",
   "firstname": "Selenium",
   "lastname": "TestUser",
   "telephone": "0123456789",
   "email": "some@email.com",
-  "password": "123456",
+  "password": "SuperSecretPassword!",
   "address": "Am Treptower Park 28",
   "zip": "12435",
   "city": "Berlin",

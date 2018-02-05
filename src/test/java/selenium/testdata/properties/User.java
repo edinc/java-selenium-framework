@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class User {
     private String email;
+    private String username;
     private String password;
     private String gender;
     private String firstname;
@@ -34,6 +35,10 @@ public class User {
     public void setEmail(final String email) {
         this.email = email;
     }
+
+    public String getUsername() {return username; }
+
+    public void setUsername(final String username) { this.username = username; }
 
     public String getGender() {
         return gender;
