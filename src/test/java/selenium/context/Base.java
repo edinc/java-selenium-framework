@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Listeners;
+import selenium.Application;
 import selenium.listeners.WebDriverListener;
 
 @Listeners(WebDriverListener.class)
