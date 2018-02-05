@@ -1,6 +1,7 @@
 package selenium.testdata.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import config.DomainConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
