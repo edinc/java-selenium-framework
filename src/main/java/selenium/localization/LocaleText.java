@@ -1,6 +1,6 @@
-package localization;
+package selenium.localization;
 
-import config.DomainConfiguration;
+import selenium.config.DomainConfiguration;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.Charset;

@@ -1,7 +1,7 @@
 package selenium.listeners;
 
-import driver.Driver;
-import driver.DriverManager;
+import selenium.driver.Driver;
+import selenium.driver.DriverManager;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;

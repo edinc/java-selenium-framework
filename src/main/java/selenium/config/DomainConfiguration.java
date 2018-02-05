@@ -1,6 +1,6 @@
-package config;
+package selenium.config;
 
-import appDomain.AppDomain;
+import selenium.appDomain.AppDomain;
 import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
