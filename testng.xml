@@ -1,6 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
 <suite name="Java Selenium Framework" parallel="methods" verbose="1" thread-count="5">
 
+    <listeners>
+        <listener class-name="selenium.listeners.WebDriverListener" />
+    </listeners>
+
     <test name="all-tests">
         <packages>
             <package name="selenium.tests.*"/>
