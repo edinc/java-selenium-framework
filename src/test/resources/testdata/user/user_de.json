@@ -1,0 +1,16 @@
+{
+  "gender": "MALE",
+  "firstname": "Selenium",
+  "lastname": "TestUser",
+  "telephone": "0123456789",
+  "email": "some@email.com",
+  "password": "123456",
+  "address": "Am Treptower Park 28",
+  "zip": "12435",
+  "city": "Berlin",
+  "cardtype": "VISA",
+  "cardnumber": "4111 1111 1111 1111",
+  "expiremonth": "08",
+  "expireyear": "2018",
+  "ccvnumber": "737"
+}
