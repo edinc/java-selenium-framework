@@ -13,6 +13,14 @@
     <artifactId>java-selenium-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <developers>
+        <developer>
+            <id>edinc</id>
+            <name>Edin Cenanovic</name>
+            <email>cenanovice@gmail.com</email>
+        </developer>
+    </developers>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
