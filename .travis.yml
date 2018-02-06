@@ -1,16 +1,22 @@
+dist: trusty
 language: java
 jdk:
   - oraclejdk8
 
-addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  ⋮
+sudo: required
 
+services:
+  - docker
+
+before_script:
+  - docker pull elgalu/selenium
+  - docker pull dosel/zalenium
+  - docker run --rm -ti --name zalenium -p 4444:4444 \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v /tmp/videos:/home/seluser/videos \
+        --privileged dosel/zalenium start
 script:
-  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome -Dmode=headless
+  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome
 
 notifications:
     slack: tehnografija:yGLRFooashh7wutsGmMQFxou
