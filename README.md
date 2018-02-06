@@ -1,4 +1,4 @@
-# Java Selenium Framework
+# Java Selenium Framework [![Build Status](https://travis-ci.org/edinc/java-selenium-framework.svg?branch=master)](https://travis-ci.org/edinc/java-selenium-framework)
 
 The Selenium Java Framework is a good starting point for writing your UI automated tests utilizing Java,
 Selenium and Zalenium for running the tests in a CI manner.
