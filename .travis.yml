@@ -1,13 +1,23 @@
+dist: trusty
 language: java
 jdk:
   - oraclejdk8
 
 sudo: required
 
+addons:
+  firefox: latest
+  apt:
+    sources:
+     - google-chrome
+    packages:
+     - google-chrome-stable fluxbox
+
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 2 # give xvfb some time to start
+  - sleep 3
+  - fluxbox >/dev/null 2>&1 &
 
 script:
   - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome
