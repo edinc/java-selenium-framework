@@ -5,14 +5,16 @@ jdk:
 
 sudo: required
 
-before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python2.7.12/bin/
-  - export CHROME_BIN=chromium-browser
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3
+services:
+  - docker
 
+before_script:
+  - docker pull elgalu/selenium
+  - docker pull dosel/zalenium
+  - docker run --rm -ti --name zalenium -p 4444:4444 \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v /tmp/videos:/home/seluser/videos \
+        --privileged dosel/zalenium start
 script:
   - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=chrome
 
