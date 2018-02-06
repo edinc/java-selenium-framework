@@ -1,0 +1,14 @@
+os: osx
+language: java
+sudo: required
+
+env:
+  - MOZ_HEADLESS=1
+addons:
+  firefox: latest
+
+script:
+  - mvn clean test -Dspring.profiles.active=live -Dcountry=com -Dbrowser=firefox -Dmode=headless
+
+notifications:
+    slack: tehnografija:yGLRFooashh7wutsGmMQFxou
