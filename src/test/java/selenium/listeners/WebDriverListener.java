@@ -30,7 +30,7 @@ public class WebDriverListener implements IInvokedMethodListener {
 
             String browserName = ((Base)method.getTestMethod().getInstance()).getBrowser();
             try {
-                WebDriver driver = DriverManager.createInstance(browserName, ((Base)method.getTestMethod().getInstance()).getAppUrl());
+                WebDriver driver = DriverManager.createInstance(browserName, ((Base)method.getTestMethod().getInstance()).getAppUrl(), method.getTestMethod().getMethodName());
                 System.out.println("Initializing webdriver session --> Thread ID: " + Thread.currentThread().getId());
                 System.out.println("Running test --> " + method.getTestMethod().getMethodName());
                 Driver.setWebDriver(driver);

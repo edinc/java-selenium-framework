@@ -14,7 +14,7 @@ import java.net.URL;
 public class DriverManager {
 
     private static final String HEADLESS = "headless";
-    public static WebDriver createInstance(String browserName, String appUrl) throws MalformedURLException {
+    public static WebDriver createInstance(String browserName, String appUrl, String methodName) throws MalformedURLException {
         final String browserMode = System.getProperty("mode");
         WebDriver driver = null;
         if(browserName.toLowerCase().contains("firefox")) {
@@ -41,6 +41,7 @@ public class DriverManager {
         }
         if(browserName.toLowerCase().contains("zalenium")) {
             DesiredCapabilities cap = DesiredCapabilities.chrome();
+            cap.setCapability("name", methodName);
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
         }
         driver.navigate().to(appUrl);
