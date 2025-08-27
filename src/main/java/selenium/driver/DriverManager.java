@@ -14,11 +14,24 @@ import java.net.URL;
 public class DriverManager {
 
     private static final String HEADLESS = "headless";
+    
+    private static String getDriverPath(String osName) {
+        if (osName.contains("win")) {
+            return "driver/windows";
+        } else if (osName.contains("mac")) {
+            return "driver/osx";
+        } else {
+            // Default to Linux for Unix-based systems
+            return "driver/linux";
+        }
+    }
     public static WebDriver createInstance(String browserName, String appUrl, String methodName) throws MalformedURLException {
         final String browserMode = System.getProperty("mode");
+        final String osName = System.getProperty("os.name").toLowerCase();
+        String driverPath = getDriverPath(osName);
         WebDriver driver = null;
         if(browserName.toLowerCase().contains("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "driver/osx/geckodriver");
+            System.setProperty("webdriver.gecko.driver", driverPath + "/geckodriver");
             if(browserMode !=null  && browserMode.equals(HEADLESS)){
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("--headless");
@@ -29,7 +42,7 @@ public class DriverManager {
 
         }
         if(browserName.toLowerCase().contains("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "driver/osx/chromedriver");
+            System.setProperty("webdriver.chrome.driver", driverPath + "/chromedriver");
             if(browserMode !=null  && browserMode.equals(HEADLESS)){
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
