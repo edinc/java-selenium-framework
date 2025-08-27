@@ -23,7 +23,7 @@ jobs:
     - name: Install Firefox
       uses: browser-actions/setup-firefox@v1
       with:
-        firefox-version: '70.0'
+        firefox-version: latest
         
     - name: Verify environment
       run: |
